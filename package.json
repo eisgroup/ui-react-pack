@@ -3,7 +3,11 @@
   "version": "0.1.1",
   "description": "Reusable React Components",
   "license": "MIT",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/"
+  },
+  "files": ["lib"],
   "homepage": "https://github.com/eisgroup/ui-react-pack",
   "repository": {
     "type": "git",
@@ -17,9 +21,9 @@
     "components"
   ],
   "scripts": {
-    "release": "npm run files:copy && cd src && npm publish && cd ../ && npm run files:delete",
-    "files:copy": "cp {README.md,LICENSE,package.json} src/",
-    "files:delete": "rm src/{README.md,LICENSE,package.json}"
+    "build": "mkdir lib && cp -R src/ lib/",
+    "clear": "rm -R lib",
+    "release": "npm run build && npm publish && npm run clear"
   },
   "peerDependencies": {
     "react": "16.*",
