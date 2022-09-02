@@ -1,13 +1,15 @@
 {
   "name": "ui-react-pack",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Reusable React Components",
   "license": "MIT",
   "main": "./lib/index.js",
   "exports": {
     ".": "./lib/"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "homepage": "https://github.com/eisgroup/ui-react-pack",
   "repository": {
     "type": "git",
@@ -21,7 +23,7 @@
     "components"
   ],
   "scripts": {
-    "build": "mkdir lib && cp -R src/ lib/",
+    "build": "npm run clear && mkdir lib && cp -R src/ lib/",
     "clear": "rm -R lib",
     "release": "npm run build && npm publish && npm run clear"
   },
